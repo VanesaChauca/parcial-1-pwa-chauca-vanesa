@@ -41,3 +41,12 @@ function mostrarDetalle(pokemon){
 
     pokemonContainer.appendChild(card);
 }
+
+function mostrarPokemonPorId(id){
+    fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+    .then((result) => result.json())
+    .then((data) => {
+        mostrarDetalle(data);
+        guardarEnHistorial(id); 
+    });
+}
