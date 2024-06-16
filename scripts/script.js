@@ -53,3 +53,52 @@ function cardPokemon(pokemon){
 const mostrarDetalle = (id) => {
     window.location.href = "http://127.0.0.1:5500/detalle.html?id=" + id
 }
+
+const containerBusqueda = document.getElementById('containerBusqueda');
+const formBusqueda = document.getElementById('formBusqueda');
+const entradaBusqueda = document.getElementById('entradaBusqueda');
+
+formBusqueda.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const datoBusqueda = entradaBusqueda.value.trim().toLowerCase();
+    if (datoBusqueda) {
+        buscarPokemon(datoBusqueda);
+    }
+});
+
+async function buscarPokemon(datoBusqueda) {
+    const response = await fetch(`${url_endPoint}/${datoBusqueda}`);
+    if (response.ok) {
+        const data = await response.json();
+        mostrarPokemon([data]);
+    } else {
+        alert('No se encontró el Pokémon.');
+        containerBusqueda.innerHTML = '<p>No se encontró el Pokémon.</p>';
+    }
+}
+
+function mostrarPokemon(pokemons) {
+    containerBusqueda.innerHTML = ''; // Limpia el contenedor de Pokémon antes de mostrar uno nuevo
+    pokemons.forEach(pokemon => {
+        const card = document.createElement('div');
+        card.classList.add('pokemon-card');
+        card.addEventListener('click', () => {
+             mostrarDetalle(pokemon.id)
+         });
+
+        const sprite = document.createElement('img');
+        sprite.src = pokemon.sprites.front_default;
+        sprite.alt = pokemon.name;
+
+        const number = document.createElement('p');
+        number.classList.add('num');
+        number.innerText = `#${pokemon.id}`; 
+
+        const name = document.createElement('p');
+        name.textContent = pokemon.name;
+
+        card.appendChild(sprite);
+        card.appendChild(name);
+        containerBusqueda.appendChild(card);
+    });
+}
