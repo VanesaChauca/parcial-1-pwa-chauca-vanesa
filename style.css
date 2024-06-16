@@ -86,8 +86,9 @@ form .btn_color{
 }
 
 .historial{
-    background-color: rgb(205, 255, 237);
+    background-color: rgb(233, 254, 237);
     border-radius: 1rem;
     padding: 1.5rem;
     margin-top: 2rem;
+    margin-bottom: 1.5rem;
 }
