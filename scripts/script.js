@@ -17,3 +17,11 @@ function fetchPokemones(listaPokemons){
 }
 
 fetchPokemones(100);
+
+function cardPokemon(pokemon){
+    const card = document.createElement('div');
+    card.classList.add('pokemon-block');
+    card.addEventListener('click', () => {
+        mostrarDetalle(pokemon.id)
+    })
+}
