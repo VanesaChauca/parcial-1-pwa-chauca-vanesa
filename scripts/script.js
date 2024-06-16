@@ -24,4 +24,28 @@ function cardPokemon(pokemon){
     card.addEventListener('click', () => {
         mostrarDetalle(pokemon.id)
     })
+
+    const spriteContainer =document.createElement('div');
+    spriteContainer.classList.add('img-container');
+
+    const sprite = document.createElement('img');
+    sprite.src = pokemon.sprites.front_default;
+
+    spriteContainer.appendChild(sprite);
+
+    const number = document.createElement('p')
+    number.classList.add('num')
+    number.innerText = `#${pokemon.id.toString().padStart(3, 0)}`; 
+
+    const name =document.createElement('p');
+    name.classList.add('name');
+    name.textContent = pokemon.name;
+
+    card.appendChild(spriteContainer);
+    card.appendChild(number);
+    card.appendChild(name);
+
+    pokemonContainer.appendChild(card)
+    console.log(pokemonContainer)
+
 }
