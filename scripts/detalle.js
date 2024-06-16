@@ -50,3 +50,12 @@ function mostrarPokemonPorId(id){
         guardarEnHistorial(id); 
     });
 }
+mostrarPokemonPorId(id_pokemon);
+
+function guardarEnHistorial(id) {
+    const historial = JSON.parse(localStorage.getItem('historial')) || [];
+    if (!historial.includes(id)) {
+        historial.push(id);
+        localStorage.setItem('historial', JSON.stringify(historial));
+    }
+}
