@@ -76,3 +76,6 @@ function cargarHistorial() {
         historialContainer.appendChild(item);
     });
 }
+if (document.getElementById('historial-list')) {
+    cargarHistorial();
+}
