@@ -15,10 +15,10 @@ function fetchPokemones(listaPokemons){
         fetchPokemon(i);
     }
 }
-
 fetchPokemones(100);
 
 function cardPokemon(pokemon){
+    
     const card = document.createElement('div');
     card.classList.add('pokemon-block');
     card.addEventListener('click', () => {
@@ -50,9 +50,14 @@ function cardPokemon(pokemon){
 
 }
 
+
 const mostrarDetalle = (id) => {
-    window.location.href = "http://127.0.0.1:5500/detalle.html?id=" + id
+    window.location.href = "http://127.0.0.1:5501/detalle.html?id=" + id
 }
+
+
+
+//variables para la busqueda de los pokemon
 
 const containerBusqueda = document.getElementById('containerBusqueda');
 const formBusqueda = document.getElementById('formBusqueda');

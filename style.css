@@ -1,6 +1,5 @@
 body{
-    background-image: url(img/bag.jpg);
-    height: 50vh;
+    background-image: url(img/bg.jpg);
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
@@ -16,6 +15,7 @@ body{
     height: 50vh;
 
 }
+
 .box-busqueda{
     display: flex;
     justify-content: center;
@@ -24,10 +24,14 @@ body{
 .detalleBox{
     display: flex;
     align-items: center;
+    flex-wrap: nowrap;
+    align-content: stretch;
     flex-direction: column;
 }
+
+
 .pokemon-container div {
-    background-color: rgb(68, 131, 71);
+    background-color: rgb(107, 166, 146);
     color: white;
     border: 1px solid #ffffff;
     margin: 0.5rem;
@@ -35,6 +39,8 @@ body{
     display: grid;
     gap: 3;
     cursor: pointer;
+    font-size: larger ;
+    font-weight: 500;
 }
 
 .tarjetaDetalle{
@@ -77,4 +83,11 @@ form .btn_color{
 
 .pokemon-block>.img-container{
     background-color: rgb(255, 242, 190);
+}
+
+.historial{
+    background-color: rgb(205, 255, 237);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-top: 2rem;
 }

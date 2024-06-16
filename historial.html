@@ -11,26 +11,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <title>PokeApi</title>
 </head>
-<body class="container"></body>
-    <header>
-        <h1 class="d-none">Historial de Pokemones:</h1>
-        
-    </header>
-    <main class="container py5"></main>
+<body class="container-fluid">
 
-        <div class="poke-logo detalleBox"></div>
-            <img src="img/poke-logo.png" alt="Pokemon header">
-            <button onclick="window.location.href='index.html'" class="button btn_color">volver a la pagina anterior</button>
-        </div>
-        <div class="historial" id="historial">
-            <ul class="historial-list" id="historial-list">
+        <header>
+            <h1 class="d-none">Pokemones vistos</h1>
+                
+        </header>
+        <main class="container">
 
-            </ul> 
-        </div>
-    </main>
-    <script src="scripts/detalle.js"></script>
+            <div class="poke-logo detalleBox">
+                <img src="img/poke-logo.png" alt="logo de pokemon">
+                <button onclick="window.location.href='index.html'" class="button btn_color">volver a la pagina anterior</button>
+            </div>
+            <div class="historial" id="historial">
+                <h2>Historial de Pokemones:</h2>
+                    <ul class="historial-list" id="historial-list">
+
+                    </ul> 
+            </div>
+        </main>
+
+    
+    <script src="/scripts/detalle.js"></script>
 </body>
-<footer>
-   <p>PokeAPI | Chauca Vanesa</p>
-</footer>
+
 </html>
