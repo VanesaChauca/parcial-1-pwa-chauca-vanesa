@@ -59,3 +59,20 @@ function guardarEnHistorial(id) {
         localStorage.setItem('historial', JSON.stringify(historial));
     }
 }
+
+function cargarHistorial() {
+    const historialContainer = document.getElementById('historial-list');
+
+    const historial = JSON.parse(localStorage.getItem('historial')) || [];
+
+    historialContainer.innerHTML = '';
+
+    historial.forEach(id => {
+        const item = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = `detalle.html?id=${id}`;
+        link.textContent = `Pokémon #${id}`;
+        item.appendChild(link);
+        historialContainer.appendChild(item);
+    });
+}
