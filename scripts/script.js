@@ -49,3 +49,7 @@ function cardPokemon(pokemon){
     console.log(pokemonContainer)
 
 }
+
+const mostrarDetalle = (id) => {
+    window.location.href = "http://127.0.0.1:5500/detalle.html?id=" + id
+}
