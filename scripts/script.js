@@ -52,7 +52,7 @@ function cardPokemon(pokemon){
 
 
 const mostrarDetalle = (id) => {
-    window.location.href = "http://127.0.0.1:5501/detalle.html?id=" + id
+    window.location.href = "detalle.html?id=" + id
 }
 
 
